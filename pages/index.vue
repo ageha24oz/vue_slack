@@ -1,60 +1,42 @@
 <template>
- <div class="container">
-   <div class="chats-container">
-     <div class="chat-container">
-       <div class="thumbnail-container">
-         <img src="https://pbs.twimg.com/profile_images/1131882065337602049/0JRUGd3S_400x400.jpg" />
-       </div>
-       <div class="message-container">
-         <div class="user-name">cohki0305</div>
-         <div class="message">今日も良い天気ですね</div>
-       </div>
-     </div>
-
-     <div class="chat-container">
-       <div class="thumbnail-container">
-         <img src="https://pbs.twimg.com/profile_images/1131882065337602049/0JRUGd3S_400x400.jpg" />
-       </div>
-       <div class="message-container">
-         <div class="user-name">cohki0305</div>
-         <div class="message">そうですねー</div>
-       </div>
-     </div>
-
-   </div>
- </div>
+  <div class="container">
+    <div class="chats-layout">
+      <messages />
+    </div>
+    <div class="input-layout">
+      <div class="input-container">
+        <textarea></textarea>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-
+import Messages from '~/components/Messages.vue'
 export default {
- components: {
- }
+  components: {
+    Messages
+  }
 }
 </script>
 
 <style scoped>
-.chats-container {
- padding: 16px;
+.container {
+  height: 100%;
 }
-
-.chat-container {
- display: flex;
- padding: 8px;
+.chats-layout {
+  overflow: scroll;
+  height: 90%;
 }
-
-.thumbnail-container {
- margin-right: 16px;
+.input-layout {
+  height: 10%;
 }
-
-.thumbnail-container img {
- width: 50px;
- height: 50px;
- border-radius: 10px;
+.input-container {
+  padding: 10px;
+  height: 100%;
 }
-
-.user-name {
- font-weight: bold;
+textarea {
+  width: 100%;
+  height: 100%;
 }
-
 </style>
